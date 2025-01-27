@@ -52,7 +52,7 @@ export default function Beranda() {
 
     useEffect(() => {
         window.onscroll = function () { vBtnTop() };
-        audio.currentTime = 85;
+        // audio.currentTime = 85;
         playing ? audio.play() : audio.pause();
         audio.loop = true;
     }, [playing, audio])
