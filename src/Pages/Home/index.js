@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react'
-import { nama_pasangan } from '../../Constants/global'
+import { nama_pasangan, tanggal_pernikahan } from '../../Constants/global'
 import '../../css/waves.css'
 import cover from '../../Img/compress/gallery-0.webp'
-import cover2 from '../../Img/compress/gallery-3.webp'
 // importing aos
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import CountdownTimer from '../../Components/CountdownTimer';
 
-export default function Home({fadeIn}) {
+export default function Home({ fadeIn }) {
     useEffect(() => {
         AOS.init();
     }, [])
     return (
         <>
-            <div id="home" className="landing-animation w-full bg-cover" style={{ backgroundImage: window.innerWidth > 992 ? `url(${cover2})` : `url(${cover})` }}>
+            <div id="home" className="landing-animation w-full bg-cover" style={{ backgroundImage: `url(${cover})` }}>
                 <div className='absolute h-screen bg-black/50 w-full'></div>
                 <div className='absolute h-screen w-full'>
                     <div className='absolute top-2/4 lg:top-1/3 left-0 right-0'>
@@ -25,9 +25,12 @@ export default function Home({fadeIn}) {
                                 {nama_pasangan}
                             </div>
                             <div className='text-gray-200 font-bold text-lg mb-4'>
-                                12 JANUARI 2023
+                                {tanggal_pernikahan}
                             </div>
                         </div>
+                        {/* CountdownTimer Component */}
+                        <CountdownTimer />
+                        {/* End CountdownTimer Component */}
                     </div>
                 </div>
                 <div className="spacer"></div>

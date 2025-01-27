@@ -1,15 +1,21 @@
 import { faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { nama_pasangan } from '../../Constants/global'
 import hiasan1 from '../../Img/hiasan-1.png'
 
 export default function Cover({ transformUp, onClick }) {
-    // useEffect(() => {
-    //     let url = new URL(window.location.origin);
-    //     let searchParams = new URLSearchParams(url.search);
-    //     console.log(searchParams.get('to'));
-    // })
+    const [recipient, setRecipient] = useState(null);
+
+    useEffect(() => {
+        let url = new URL(window.location.href);
+        let searchParams = new URLSearchParams(url.search);
+        let toParam = searchParams.get('to');
+        if (toParam) {
+            setRecipient(toParam);
+        }
+    }, []);
+
     return (
         <>
             <div className={`fixed w-full h-full z-20 ${transformUp === true ? 'translate-y-[-700px] opacity-0' : ''} duration-700 cover-1`}>
@@ -23,15 +29,16 @@ export default function Cover({ transformUp, onClick }) {
                             <div className='text-[#413327] custom-font-2 font-semibold text-5xl mb-4'>
                                 {nama_pasangan}
                             </div>
-                            <div className='text-[#413327] font-bold text-lg mb-4'>
-                                Kpd Bpk/Ibu/Saudara/i
+                            <div className='text-[#413327] text-lg mb-4'>
+                                Kepada Yth Bpk/Ibu/Saudara/i
                             </div>
-                            <p className='text-[#413327] text-sm md:text-lg mb-3 lg:mx-96 md:mx-32 mx-8'>
-                                Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Berhadir Di Acara Pernikahan Kami.
-                            </p>
-                            <button type="button" onClick={onClick} class="text-white text-md bg-[#413327] hover:bg-[#31261d] font-bold rounded-xl px-5 py-3.5 mr-2 mb-2">
+                            {recipient && <div className='text-[#413327] font-bold text-xl mb-4'>{recipient}</div>}
+                            <button type="button" onClick={onClick} className="text-white text-md bg-[#413327] hover:bg-[#31261d] font-bold rounded-xl px-5 py-3.5 mr-2 mb-2">
                                 <FontAwesomeIcon icon={faEnvelopeOpen} /> Buka Undangan
                             </button>
+                            <p className='text-[#413327] text-sm md:text-lg italic mb-3 lg:mx-96 md:mx-32 mx-8'>
+                                Mohon maaf apabila ada kesalahan penulisan nama/gelar pada undangan ini.
+                            </p>
                         </div>
                     </div>
                 </div>

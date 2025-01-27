@@ -1,4 +1,4 @@
-import { faCalendar, faGift, faHome, faMusic, faPhotoVideo, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faHome, faMusic, faPhotoVideo, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -23,10 +23,10 @@ export default function BottomBar({ visible, onMusic }) {
                         <FontAwesomeIcon icon={faPhotoVideo} />
                         <span className='block text-xs text-gray-300 hover:text-white hover:font-bold'>Gallery</span>
                     </a>
-                    <a href='#gift' className='text-center md:mx-4'>
+                    {/* <a href='#gift' className='text-center md:mx-4'>
                         <FontAwesomeIcon icon={faGift} />
                         <span className='block text-xs text-gray-300 hover:text-white hover:font-bold'>Gift</span>
-                    </a>
+                    </a> */}
                     <div className='text-center md:mx-4 hover:cursor-pointer' onClick={onMusic}>
                         <FontAwesomeIcon icon={faMusic} />
                         <span className='block text-xs text-gray-300 hover:text-white hover:font-bold'>Musik</span>

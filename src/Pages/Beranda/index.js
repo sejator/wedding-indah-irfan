@@ -7,9 +7,9 @@ import Cover from '../Cover';
 import Gallery from '../Gallery';
 import Home from '../Home';
 import Penutup from '../Penutup';
-import Protocol from '../Protocol';
+// import Protocol from '../Protocol';
 import Reservasi from '../Reservasi';
-import MusicWedding from '../../Music/Beautiful-In-White_Shane-Filan.mp3'
+import MusicWedding from '../../Music/ANDMESH_ANUGERAH_TERINDAH.mp3'
 import BottomBar from '../../Components/bottomBar';
 
 export default function Beranda() {
@@ -21,7 +21,7 @@ export default function Beranda() {
     const [vMusik, setVmusik] = useState(false);
 
     const toggle = () => setPlaying(!playing);
-    
+
     const bukaUndangan = () => {
         window.scrollTo(0, 0);
         document.body.style.overflowY = "auto";
@@ -54,22 +54,22 @@ export default function Beranda() {
         window.onscroll = function () { vBtnTop() };
         playing ? audio.play() : audio.pause();
         audio.loop = true;
-    }, [playing])
+    }, [playing, audio])
 
 
     return (
         <>
             <Cover transformUp={showUp} onClick={bukaUndangan} />
             <ButtonUp visible={btnUp} onClick={() => scrollToTop()} />
-            <MusicBg onClick={toggle} statsPlay={playing} visible={vMusik} onClose={() => onCloseMusic()}/>
-            <BottomBar visible={vMusik === true ? false : true} onMusic={() => {onMusic()}}/>
+            <MusicBg onClick={toggle} statsPlay={playing} visible={vMusik} onClose={() => onCloseMusic()} />
+            <BottomBar visible={vMusik === true ? false : true} onMusic={() => { onMusic() }} />
             <Home fadeIn={fadein} />
             <Couple />
             <Acara />
             <Gallery />
             <Reservasi />
             <Penutup />
-            <Protocol />
+            {/* <Protocol /> */}
         </>
     )
 }

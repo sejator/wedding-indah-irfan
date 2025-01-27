@@ -4,6 +4,7 @@ import pria from '../../Img/compress/pria.webp'
 import wanita from '../../Img/compress/wanita.webp'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { detail_pasangan } from '../../Constants/global';
 
 export default function Couple() {
   useEffect(() => {
@@ -13,29 +14,29 @@ export default function Couple() {
     <>
       <div className='my-16'>
         <div className='flex justify-center mb-8'>
-          <img src={hiasan1} alt='hiasan1' className='w-[80px]' data-aos="fade-up"/>
+          <img src={hiasan1} alt='hiasan1' className='w-[80px]' data-aos="fade-up" />
         </div>
         <h1 className='text-center text-3xl font-semibold arial mx-4 mb-2 text-[#413327]' data-aos="fade-up">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْمِ</h1>
-        <p className='text-center arial text-[#413327] font-bold mb-2' data-aos="fade-up">Assalamualaikum Wr Wb</p>
+        <p className='text-center arial text-[#413327] font-bold mb-2' data-aos="fade-up">Assalamu'alaikum Warohmatullohi Wabarokatuh</p>
         <p className='text-center arial text-[#413327] text-sm mx-4 md:mx-48 mb-4' data-aos="fade-up">
           Maha suci Allah SWT yang telah menciptakan makhluk-Nya berpasang-pasangan. Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami :
         </p>
         <div id="mempelai" className='grid md:grid-cols-2 grid-cols-1 gap-4 lg:mx-32 mx-4'>
           <div>
-            <center>
-              <img src={pria} alt='mempelai-pria' data-aos="fade-up" loading="lazy" className='w-[400px]' />
-            </center>
-            <h1 data-aos="fade-up" className='text-center custom-font-3 md:text-2xl text-lg text-[#413327] font-bold mb-4'>Mempelai Pria</h1>
-            <h1 data-aos="fade-up" className='text-center custom-font-2 lg:text-6xl text-4xl text-[#413327] font-bold mb-2'>Hany Sandi Himawan</h1>
-            <p data-aos="fade-up" className='text-[#413327] font-semibold text-center md:text-lg text-sm'>Putra Ketiga dari <br /> Bapak Hirman (Alm) & Ibu Koisah</p>
+            <div className='flex justify-center'>
+              <img src={pria} alt='mempelai-pria' data-aos="fade-up" loading="lazy" className='w-[250px] rounded-full shadow-lg bg-white[#ab8a6d]' />
+            </div>
+            <h1 data-aos="fade-up" className='text-center custom-font-3 md:text-2xl text-lg text-[#413327] font-bold my-4'>Mempelai Pria</h1>
+            <h1 data-aos="fade-up" className='text-center custom-font-2 lg:text-6xl text-4xl text-[#413327] font-bold mb-2'>{detail_pasangan.pria.nama}</h1>
+            <p data-aos="fade-up" className='text-[#413327] font-semibold text-center md:text-lg text-sm'>Putra Pertama dari <br /> {detail_pasangan.pria.ortu}</p>
           </div>
           <div>
-            <center>
-              <img src={wanita} alt='mempelai-pria' data-aos="fade-up" loading="lazy" className='w-[400px]' />
-            </center>
-            <h1 data-aos="fade-up" className='text-center custom-font-3 md:text-2xl text-lg text-[#413327] font-bold mb-4'>Mempelai Wanita</h1>
-            <h1 data-aos="fade-up" className='text-center custom-font-2 lg:text-6xl text-4xl text-[#413327] font-bold mb-2'>Siti Maesaroh</h1>
-            <p data-aos="fade-up" className='text-[#413327] font-semibold text-center md:text-lg text-sm'>Putri Bungsu dari <br /> Bapak Sehuddin & Ibu Sukriyah</p>
+            <div className='flex justify-center'>
+              <img src={wanita} alt='mempelai-pria' data-aos="fade-up" loading="lazy" className='w-[250px] rounded-full shadow-lg bg-white[#ab8a6d]' />
+            </div>
+            <h1 data-aos="fade-up" className='text-center custom-font-3 md:text-2xl text-lg text-[#413327] font-bold my-4'>Mempelai Wanita</h1>
+            <h1 data-aos="fade-up" className='text-center custom-font-2 lg:text-6xl text-4xl text-[#413327] font-bold mb-2'>{detail_pasangan.wanita.nama}</h1>
+            <p data-aos="fade-up" className='text-[#413327] font-semibold text-center md:text-lg text-sm'>Putri Kedua dari <br /> {detail_pasangan.wanita.ortu}</p>
           </div>
         </div>
       </div>

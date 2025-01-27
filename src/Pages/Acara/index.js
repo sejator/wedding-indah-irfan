@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapLocation } from '@fortawesome/free-solid-svg-icons'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { detail_acara } from '../../Constants/global'
 
 export default function Acara() {
   useEffect(() => {
@@ -32,11 +33,11 @@ export default function Acara() {
                 <center>
                   <div className='w-24 rounded-lg h-1 bg-white mb-4'></div>
                 </center>
-                <h1 className='text-white text-center font-normal arial mb-8'>RABU <br /> 11 JANUARI 2023 <br /> PUKUL 19.30 WIB - SELESAI</h1>
+                <h1 className='text-white text-center font-normal arial mb-8'>{detail_acara.akad.hari} <br /> {detail_acara.akad.tanggal} <br /> {detail_acara.akad.waktu}</h1>
                 <center>
                   <div className='w-24 rounded-lg h-1 bg-white mb-4'></div>
                 </center>
-                <h1 className='text-center text-white mb-8'><b>• Kediaman Mempelai Wanita •</b> <br />Ds. Karangbale Blok Gunung Nyapah, RT.05/02, No.42, <br/> Kec. Larangan, Kab. Brebes, Jawa Tengah</h1>
+                <h1 className='text-center text-white mb-8'><b>• Kediaman Mempelai Wanita •</b> <br />{detail_acara.akad.tempat}</h1>
               </div>
             </div>
             <div data-aos="fade-up" className='rounded-2xl relative bg-resepsi' style={{ backgroundImage: `url(${bgresepsi})` }}>
@@ -45,24 +46,24 @@ export default function Acara() {
                 <center>
                   <img src={resepsi} className='w-[50px] mb-8' alt='resepsi' />
                 </center>
-                <h1 className='text-white font-bold text-5xl custom-font-2 mb-4 text-center'>Resepsi</h1>
+                <h1 className='text-white font-bold text-5xl custom-font-2 mb-4 text-center'>Tamu Undangan</h1>
                 <center>
                   <div className='w-24 rounded-lg h-1 bg-white mb-4'></div>
                 </center>
-                <h1 className='text-white text-center font-normal arial mb-8'>KAMIS <br /> 12 JANUARI 2023 <br /> PUKUL 08.00 WIB - SELESAI</h1>
+                <h1 className='text-white text-center font-normal arial mb-8'>{detail_acara.resepsi.hari} <br /> {detail_acara.resepsi.tanggal} <br /> {detail_acara.resepsi.waktu}</h1>
                 <center>
                   <div className='w-24 rounded-lg h-1 bg-white mb-4'></div>
                 </center>
-                <h1 className='text-center text-white mb-8'><b>• Kediaman Mempelai Wanita •</b> <br />Ds. Karangbale Blok Gunung Nyapah, RT.05/02, No.42, <br/> Kec. Larangan, Kab. Brebes, Jawa Tengah</h1>
+                <h1 className='text-center text-white mb-8'><b>• Kediaman Mempelai Wanita •</b> <br />{detail_acara.resepsi.tempat}</h1>
               </div>
             </div>
           </div>
         </div>
         <center>
           <div data-aos="fade-up" className='max-w-4xl mx-6 rounded-xl'>
-            <div className="mapouter mb-8"><div className="gmap_canvas"><iframe title='maps' className="gmap_iframe rounded-xl shadow-lg" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=-6.9964901,108.9193016&t=&z=17&ie=UTF8&iwloc=&output=embed"></iframe></div></div>
+            <div className="mapouter mb-8"><div className="gmap_canvas"><iframe title='maps' className="gmap_iframe rounded-xl shadow-lg" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src={detail_acara.akad.maps_frame}></iframe></div></div>
             <center>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps?ll=-6.99649,108.919302&z=17&t=m&hl=id-ID&gl=US&mapclient=embed&q=6%C2%B059%2747.4%22S+108%C2%B055%2709.5%22E+-6.996490,+108.919302@-6.9964901,108.9193016" className="text-white text-md bg-[#413327] hover:bg-[#31261d] font-bold rounded-xl px-5 py-3.5 mr-2 mb-2">
+              <a target="_blank" rel="noopener noreferrer" href={detail_acara.akad.maps_target} className="text-white text-md bg-[#413327] hover:bg-[#31261d] font-bold rounded-xl px-5 py-3.5 mr-2 mb-2">
                 <FontAwesomeIcon icon={faMapLocation} /> Lihat Lokasi
               </a>
             </center>

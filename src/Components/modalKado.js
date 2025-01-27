@@ -3,21 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Modal } from 'flowbite-react'
 import React from 'react'
 import Swal from 'sweetalert2'
+import { alamat_rumah, no_wa } from '../Constants/global'
 
 export default function modalKado({ visible, onClose }) {
 
     const copyalamat = () => {
-        navigator.clipboard.writeText('Ds. Karangbale Blok Gunung Nyapah, RT.05/02, No.42, Kec. Larangan, Kab. Brebes, Jawa Tengah');
+        navigator.clipboard.writeText(alamat_rumah);
         Swal.fire({
             text: 'Berhasil Salin Alamat!',
             icon: 'success',
             confirmButtonColor: '#413327',
             confirmButtonText: 'OKE',
-          })
+        })
     }
 
     const wawanita = () => {
-        window.open('https://api.whatsapp.com/send?phone=6285728006013', "_blank" );
+        window.open(`https://api.whatsapp.com/send?phone=${no_wa}`, "_blank");
     }
 
     return (
@@ -39,16 +40,13 @@ export default function modalKado({ visible, onClose }) {
                             <div className='grid grid-cols-1 gap-4 mb-4'>
                                 <div>
                                     <div className='bg-[#dfc4a7] rounded-lg py-3 mb-2'>
-                                        <h1 className='text-center font-medium text-[#413327] text-xl'>
-                                            Ds. Karangbale Blok Gunung Nyapah, RT.05/02, No.42,
-                                            Kec. Larangan, Kab. Brebes, Jawa Tengah
-                                        </h1>
+                                        <h1 className='text-center font-medium text-[#413327] text-xl'>{alamat_rumah}</h1>
                                     </div>
-                                    <button onClick={() => {copyalamat()}} className='py-3 bg-gray-500 rounded-lg w-full mb-2 text-white hover:bg-gray-700'>
+                                    <button onClick={() => { copyalamat() }} className='py-3 bg-gray-500 rounded-lg w-full mb-2 text-white hover:bg-gray-700'>
                                         <FontAwesomeIcon icon={faCopy} className="mr-2" />
                                         Salin Alamat Mempelai
                                     </button>
-                                    <button onClick={() => {wawanita()}} className='py-3 bg-green-600 rounded-lg w-full mb-4 text-white hover:bg-green-700'>
+                                    <button onClick={() => { wawanita() }} className='py-3 bg-green-600 rounded-lg w-full mb-4 text-white hover:bg-green-700'>
                                         <FontAwesomeIcon icon={faMessage} className="mr-2" />
                                         Konfirmasi via Whatsapp
                                     </button>
