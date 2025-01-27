@@ -1,6 +1,6 @@
 ![thumnail3](https://user-images.githubusercontent.com/47371845/208376201-a43d0c45-f9fb-4480-9df5-3889130e5814.png)
 
-## *:information_source: Wedding Invitation Sandi & May*
+## *:information_source: Wedding Invitation Indah & Irfan*
 Merupakan Source Code Web Invitation bertema coklat, teknologi yg di gunakan sebagai berikut: `React JS`, `Firebase`, `Tailwindcss`
 
 ## *:sparkles: Fitur*
@@ -14,7 +14,7 @@ Merupakan Source Code Web Invitation bertema coklat, teknologi yg di gunakan seb
 #### :arrow_right: Clone Project / Download File
 Clone Project dengan perintah terminal `gitbash` sebagai berikut:
 ```
-git clone git@github.com:radhiant/wedding-sandi-may.git
+git clone git@github.com:radhiant/wedding-indah-may.git
 ```
 Atau bisa klik tombol download Zip dan extrak file tersebut
 
@@ -30,4 +30,4 @@ npm run start
 ```
 
 ## *:desktop_computer: Preview*
-https://wedding-may-sandi.netlify.app/
+https://wedding-indah-irfan.netlify.app/
